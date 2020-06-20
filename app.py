@@ -16,7 +16,7 @@ app.config['BOOTSTRAP_BTN_STYLE'] = 'primary'
 app.config['BOOTSTRAP_BTN_SIZE'] = 'sm'
 
 bootstrap = Bootstrap(app)
-Markdown(app)
+Markdown(app, extensions=["nl2br"])
 
 
 def load_songs():
@@ -44,7 +44,7 @@ def song(song_name):
         content = fh.read()
     song = dict(
         title=dict(songs)[song_name],
-        content=content.replace("\n", "  \n")
+        content=content
     )
     return render_template('song.html', songs=songs, song=song)
 
