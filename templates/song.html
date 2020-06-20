@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{song['title']}}</h1>
+
+{{ song['content']|markdown }}
+{% endblock %}

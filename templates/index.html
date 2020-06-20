@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sange til Kates fest 🇩🇰🇩🇰🇩🇰</h1>
+
+<p>
+  S&aring; skal vi synge 😄🎶🎵
+</p>
+<ul>
+  {% for song_name, song_title in songs %}
+  <li><a href="{{ url_for('song', song_name=song_name) }}">{{ song_title }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
